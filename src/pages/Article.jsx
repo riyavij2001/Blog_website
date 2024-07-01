@@ -4,6 +4,7 @@ import axios from "axios";
 import Comments_List from "../components/Comments_List";
 import Article_content from "./Article_content";
 import NotFoundPage from "./NotFoundPage";
+import AddCommentForm from "../components/AddCommentForm";
 
 const Article = () => {
   const [articlesInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
@@ -21,7 +22,9 @@ const Article = () => {
   }, []);
 
   const addUpvote = async () => {
-    const response = await axios.put(`http://localhost:8000/api/articles/${articleId}/upvote`);
+    const response = await axios.put(
+      `http://localhost:8000/api/articles/${articleId}/upvote`
+    );
     const updatedArticle = response.data;
     setArticleInfo(updatedArticle);
   };
@@ -60,6 +63,10 @@ const Article = () => {
           </p>
         ))}
       </div>
+      <AddCommentForm
+        articleName={articleId}
+        onArticleUpdated={(updatedArticle) => setArticleInfo(updatedArticle)}
+      />
       <Comments_List comments={articlesInfo.comments} />
     </div>
   );
