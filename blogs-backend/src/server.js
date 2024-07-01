@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'; // Import cors
 import { db, connetToDB } from './db.js';
 
 // let articlesInfo = [{
@@ -18,6 +19,9 @@ import { db, connetToDB } from './db.js';
 // }]
 
 const app = express();
+// var cors = require('cors');
+// app.use(cors({origin: true, credentials: true}));
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
 // app.post('/hello', (req, res) => {
@@ -30,9 +34,7 @@ app.use(express.json());
 // })
 
 app.get('/api/articles/:name', async (req,res) => {
-    const { name } = req.params;
-
-    connetToDB 
+    const { name } = req.params; 
 
     const article = await db.collection('Blog_DB').findOne({ name })
     if(article){
@@ -52,7 +54,7 @@ app.put('/api/articles/:name/upvote', async (req,res) => {
     const article = await db.collection('Blog_DB').findOne({ name })
 
     if(article){
-        res.send(`The ${name} article now has ${article.upvotes} upvotes.`)
+        res.json(article);
     }
     else{
         res.send(`The ${article} doesn\'t exist`);
