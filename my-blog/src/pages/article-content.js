@@ -1,4 +1,4 @@
-const Article_content = [
+const articles = [
     {
         name: 'learn-react',
         title: 'The Fastest Way to Learn React',
@@ -12,7 +12,7 @@ const Article_content = [
             sodales purus euismod.`,
             `Donec vel mauris lectus. Etiam nec lectus urna. Sed sodales ultrices dapibus. 
             Nam blandit tristique risus, eget accumsan nisl interdum eu. Aenean ac accumsan 
-            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra.`, `Donec finibus lectus 
+            nisi. Nunc vel pulvinar diam. Nam eleifend egestas viverra. Donec finibus lectus 
             sed lorem ultricies, eget ornare leo luctus. Morbi vehicula, nulla eu tempor 
             interdum, nibh elit congue tellus, ac vulputate urna lorem nec nisi. Morbi id 
             consequat quam. Vivamus accumsan dui in facilisis aliquet.`,
@@ -74,4 +74,4 @@ const Article_content = [
     },  
 ];
 
-export default Article_content;
+export default articles;
