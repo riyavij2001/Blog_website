@@ -6,17 +6,17 @@ import reportWebVitals from "./reportWebVitals";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDyTMPMAx63F82UkTElW9J93sE_-e28ceQ",
+  apiKey: "",
 
-  authDomain: "blogs-c0059.firebaseapp.com",
+  authDomain: "",
 
-  projectId: "blogs-c0059",
+  projectId: "",
 
-  storageBucket: "blogs-c0059.appspot.com",
+  storageBucket: "",
 
-  messagingSenderId: "714105464090",
+  messagingSenderId: "",
 
-  appId: "1:714105464090:web:bdd77710fa9e145fc0b8a3",
+  appId: "",
 };
 
 const app = initializeApp(firebaseConfig);
